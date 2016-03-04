@@ -1,0 +1,8 @@
+A=csvread ('toOctave.csv'); %load data from CSV file - first column is every phone call date stamp, second column is every scan date stamp
+a = A(:,1); 
+b=A(:,2); %make sure lengths are correct
+c = 0.041667 % = 1 hour in excel, with the format dd/mm/yy hh:mm:ss
+and(a>= b'-c,a<=b'+c) %logical phone call date stamp is greater than earlier time and less than later time limits (based on scan date stamp
+%and(a>= b'-c/2,a<=b'+c/2)  %half hourly
+%and(a>= b'-c/4,a<=b'+c/4) %quarter hourly
+  
